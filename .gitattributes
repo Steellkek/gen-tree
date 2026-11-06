@@ -1,0 +1,3 @@
+# GEDCOM must stay byte-exact: BOM + CRLF are required by the validator,
+# and text normalization on commit would strip the CRLF line endings.
+*.ged -text
