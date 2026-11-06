@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Миникаевы из Магнитогорска — семейное исследование</title>
+<style>
+@page { size:A4; margin:16mm 17mm; }
+:root {
+ --paper:#ffffff; --canvas:#eeeae6; --ink:#242323; --muted:#625d5a; --line:#d5cfca;
+ --accent:#812f34; --accent-soft:#f8efed; --soft:#f6f3f0;
+ --ok:#285d39; --ok-bg:#eaf2e9; --maybe:#725011; --maybe-bg:#faf0d9;
+ --no:#842f34; --no-bg:#f8e9e7; --family:#344f70; --family-bg:#eaf0f7;
+ --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","Noto Sans Armenian","Noto Sans Georgian","Noto Sans Hebrew","DejaVu Sans",Arial,sans-serif;
+ --serif:Georgia,"Times New Roman","Noto Serif","Noto Serif Armenian","Noto Serif Georgian","Noto Serif Hebrew","DejaVu Serif","Sylfaen",serif; --tree-gap:40px;
+ color-scheme:light;
+}
+* { box-sizing:border-box; }
+html { scroll-padding-top:24px; }
+body { margin:0; background:var(--canvas); color:var(--ink); font:1.0625rem/1.75 var(--serif); }
+a { color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px; }
+a:hover { text-decoration-thickness:2px; }
+a:focus-visible,summary:focus-visible,.table-wrap:focus-visible { outline:3px solid var(--accent); outline-offset:5px; }
+.report-shell { max-width:1180px; margin:32px auto; background:var(--paper); border-top:7px solid var(--ink); }
+.report-topline { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; padding:17px 52px; border-bottom:1px solid var(--ink); color:var(--muted); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.12em; }
+.report-header { padding:40px 52px 32px; border-bottom:1px solid var(--ink); }
+.report-intro { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:0 48px; align-items:start; }
+.eyebrow { margin:0 0 10px; grid-column:1; font:600 .75rem/1.5 var(--sans); letter-spacing:.16em; text-transform:none; color:var(--accent); }
+h1 { overflow-wrap:anywhere; grid-column:1; font:400 clamp(3rem,7vw,5.75rem)/1.03 var(--serif); letter-spacing:normal; margin:0 0 16px; text-wrap:balance; }
+.subtitle { grid-column:1; font:1.125rem/1.55 var(--serif); max-width:42ch; color:var(--muted); margin:0 0 24px; }
+.report-meta { grid-column:2; grid-row:2/4; margin:6px 0 0; display:grid; gap:16px; padding-left:24px; border-left:1px solid var(--line); font:.8125rem/1.7 var(--sans); }
+.report-meta dt { font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.06em; color:var(--muted); margin:0 0 3px; }
+.report-meta dd { margin:0; }
+.report-note { grid-column:1/-1; color:var(--muted); font:.8125rem/1.65 var(--sans); }
+.family-tree { margin:30px auto 0; width:100%; max-width:780px; min-width:0; }
+.tree-heading { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; margin-bottom:16px; }
+.tree-heading h2 { font:400 1.75rem/1.3 var(--serif); color:var(--ink); letter-spacing:-.025em; border:0; padding:0; margin:0; }
+.tree-heading>span { color:var(--muted); font:.75rem/1.5 var(--sans); }
+.tree-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--tree-gap); }
+.person-card { min-width:0; overflow-wrap:anywhere; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; padding:10px 14px 12px; border:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--paper); text-decoration:none; transition:background-color 160ms ease; }
+a.person-card:hover { background:var(--accent-soft); }
+.person-role { grid-column:1/-1; color:var(--muted); font:600 .75rem/1.4 var(--sans); letter-spacing:.07em; text-transform:none; }
+.person-name { grid-column:1/-1; color:var(--ink); font:400 1.375rem/1.3 var(--serif); letter-spacing:normal; overflow-wrap:anywhere; }
+.person-years { color:var(--muted); font:.75rem/1.6 var(--sans); font-variant-numeric:tabular-nums; }
+.person-status { color:var(--accent); font:600 .75rem/1.6 var(--sans); }
+.person-card.subject { background:var(--accent-soft); border-top:3px solid var(--accent); border-bottom:1px solid var(--accent); padding-top:8px; }
+.person-card.subject .person-role { color:var(--accent); }
+.person-card.subject .person-status { grid-column:1/-1; font-weight:400; color:var(--muted); }
+.tree-connectors { position:relative; width:100%; height:24px; color:var(--accent); }
+.tree-connectors::before { content:""; position:absolute; top:0; bottom:0; left:calc(25% - var(--tree-gap)/4); border-left:1px solid currentColor; }
+.vbranch { position:absolute; top:0; bottom:0; border-left:1px solid currentColor; }
+.mother-branch { position:absolute; top:0; left:calc(25% - var(--tree-gap)/4); width:calc(50% + var(--tree-gap)/2); height:10px; border-right:1px solid currentColor; border-bottom:1px solid currentColor; }
+.child-row .person-card { grid-column:1; }
+.tree-caption { font:.75rem/1.65 var(--sans); color:var(--muted); margin-top:14px; }
+.tree-caption span { display:block; margin-top:4px; }
+.report-nav { display:flex; flex-wrap:wrap; gap:4px 32px; margin:0 52px; padding:6px 0; border-bottom:1px solid var(--ink); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.06em; }
+.report-nav a { min-height:44px; display:inline-flex; align-items:center; text-decoration:none; }
+.report-nav a:hover { text-decoration:underline; }
+main { max-width:900px; padding:36px 52px 44px; margin:0 auto; }
+h2 { margin:44px 0 18px; padding:14px 0 0; border-top:1px solid var(--ink); color:var(--ink); font:400 clamp(1.625rem,3vw,2rem)/1.3 var(--serif); letter-spacing:-.025em; break-after:avoid; text-wrap:balance; }
+h3 { margin:28px 0 14px; color:var(--accent); font:600 .875rem/1.5 var(--sans); letter-spacing:.04em; }
+p { margin:0 0 18px; }
+p,li,td { overflow-wrap:break-word; }
+main>p { max-width:72ch; }
+.lead { padding:22px 24px 24px; background:var(--soft); border-top:3px solid var(--accent); border-bottom:1px solid var(--line); margin-bottom:24px; }
+.lead h2 { margin:0 0 14px; padding:0; border:0; color:var(--accent); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.12em; }
+.lead ul { margin:0; padding-left:18px; }
+.lead li { margin-bottom:12px; }
+.lead li:last-child { margin-bottom:0; }
+.tag { display:inline-block; max-width:100%; padding:2px 7px; margin:2px 0; border-radius:2px; font:600 .75rem/1.5 var(--sans); white-space:nowrap; }
+.ok { color:var(--ok); background:var(--ok-bg); }
+.maybe { color:var(--maybe); background:var(--maybe-bg); }
+.no { color:var(--no); background:var(--no-bg); }
+.fam { color:var(--family); background:var(--family-bg); }
+.evidence-guide { border-bottom:1px solid var(--line); color:var(--muted); margin:0 0 30px; font:.8125rem/1.7 var(--sans); }
+.evidence-guide h3 { padding:12px 0 0; margin:0; font:600 .8125rem/1.7 var(--sans); color:var(--ink); letter-spacing:normal; }
+.legend { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; padding:8px 0 18px; }
+.legend .tag { display:table; margin-bottom:4px; }
+.table-wrap { max-width:100%; overflow-x:auto; margin:16px 0 20px; }
+table { width:100%; border-collapse:collapse; font:.875rem/1.65 var(--sans); }
+th,td { text-align:start; vertical-align:top; border-bottom:1px solid var(--line); padding:12px 16px 12px 0; }
+th { color:var(--muted); font:600 .75rem/1.5 var(--sans); text-transform:none; letter-spacing:.04em; border-bottom:1px solid var(--ink); }
+th:last-child,td:last-child { padding-right:0; }
+td.d { width:18%; min-width:90px; }
+td.t { width:17%; }
+tr { break-inside:avoid; }
+tr:target { background:var(--accent-soft); }
+blockquote { margin:28px 0; padding:2px 0 2px 20px; border-left:2px solid var(--accent); color:var(--accent); font:italic 1.375rem/1.5 var(--serif); }
+ol,ul { margin:0 0 22px; padding-left:22px; }
+li { margin-bottom:10px; }
+.small { color:var(--muted); font:.8125rem/1.65 var(--sans); }
+.src li { color:var(--muted); font:.8125rem/1.75 var(--sans); margin-bottom:18px; padding-left:4px; }
+.src li b { color:var(--ink); }
+:target { scroll-margin-top:24px; }
+.report-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:20px 52px; border-top:1px solid var(--ink); color:var(--muted); font:.75rem/1.5 var(--sans); }
+.skip-link { position:absolute; top:8px; left:8px; padding:12px 16px; z-index:10; background:var(--paper); transform:translateY(-200%); font:1rem/1.5 var(--sans); }
+.skip-link:focus { transform:translateY(0); }
+@media(max-width:959px) {
+ .report-shell { margin:16px; }
+ .report-header { padding:32px; }
+ .report-topline,.report-footer { padding-left:32px; padding-right:32px; }
+ .report-nav { margin-left:32px; margin-right:32px; }
+ .report-intro { gap:0 24px; }
+ .person-card { display:flex; flex-direction:column; gap:4px; }
+ main { padding:32px; }
+}
+@media(max-width:600px) {
+ :root { --tree-gap:20px; }
+ body { font-size:1rem; }
+ .report-shell { margin:0; border-top-width:5px; }
+ .report-topline { padding:13px 20px; font-size:.75rem; letter-spacing:.06em; }
+ .report-header { padding:24px 20px; }
+ .report-intro { display:block; }
+ h1 { font-size:3rem; }
+ .subtitle { font-size:1rem; margin-bottom:18px; }
+ .report-meta { display:flex; flex-wrap:wrap; gap:10px 24px; padding:0; margin:0 0 18px; border:0; }
+ .report-note { font-size:.75rem; }
+ .family-tree { margin-top:24px; }
+ .tree-heading { align-items:start; }
+ .tree-heading h2 { font-size:1.5rem; }
+ .person-card { padding:10px; }
+ .person-name { font-size:1.125rem; }
+ .person-role { letter-spacing:.03em; }
+ .person-card.subject { padding-top:8px; }
+ .tree-connectors { height:22px; }
+ .tree-caption { font-size:.75rem; }
+ .report-nav { margin:0 20px; gap:4px 20px; letter-spacing:.02em; }
+ main { padding:24px 20px; }
+ .lead { padding:20px; }
+ .legend { grid-template-columns:1fr; }
+ h2 { margin-top:36px; }
+ table { min-width:560px; }
+ th,td { padding-right:12px; }
+ .report-footer { padding:20px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none !important; scroll-behavior:auto !important; } }
+@media print {
+ body { background:white; font-size:10.5pt; }
+ .report-shell { max-width:none; margin:0; border:0; }
+ .report-topline,.report-footer { padding:8pt 0; font-size:8pt; }
+ .report-header { padding:16pt 0; }
+ .report-intro { gap:0 24pt; }
+ h1 { font-size:34pt; }
+ .subtitle { font-size:11pt; }
+ .report-note { font-size:8pt; }
+ .family-tree { max-width:145mm; margin-top:18pt; break-inside:avoid; }
+ .person-card { padding:8pt; }
+ .person-name { font-size:12pt; }
+ .person-role,.person-years,.person-status,.tree-caption { font-size:8pt; }
+ .report-nav,.skip-link { display:none; }
+ main { padding:0; }
+ h2 { font-size:16pt; margin-top:20pt; }
+ .table-wrap { overflow:visible; }
+ table { min-width:0; font-size:8.5pt; }
+ th { font-size:8pt; }
+ .evidence-guide { break-inside:avoid; font-size:8.5pt; }
+ .legend { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ a { color:inherit; }
+ .person-card.subject { background:white; }
+}
+bdi { unicode-bidi:isolate; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#report-content">К тексту отчёта</a>
+<div class="report-shell">
+<div class="report-topline"><span>Семейная история · Исследование</span><span>Составлено 6 ноября 2026</span></div>
+<header class="report-header" id="top">
+  <div class="report-intro">
+    <p class="eyebrow">Семейная история по известным данным и индексам</p>
+    <h1><bdi dir="auto">Миникаевы</bdi></h1>
+    <p class="subtitle">Родословная Артура Альбертовича Миникаева из Магнитогорска: семья, ссылка из Татарстана и след деревни Фомкино.</p>
+    <dl class="report-meta">
+      <div><dt>Период</dt><dd>1868–2026 гг. (1868 — год рождения прадеда по семейному сообщению)</dd></div>
+      <div><dt>Основания</dt><dd>Рассказы самого субъекта; индексы репрессированных МВД Татарстана; энциклопедия и пресса</dd></div>
+    </dl>
+    <p class="report-note">Линии надёжности разделены жёстко: то, что рассказано в семье, и то, что нашлось в индексах, — разные вещи. Совпадение фамилии и уезда ещё не родство: оно обозначено как версия, а не как факт.</p>
+  </div>
+
+  <figure class="family-tree" aria-labelledby="tree-title" aria-describedby="tree-description">
+    <div class="tree-heading"><h2 id="tree-title">Семейное древо</h2><span>Пять известных лиц; деды и прадед — версии</span></div>
+    <div class="tree-row">
+      <a class="person-card" href="#relationship-grandmother-paternal">
+        <span class="person-role">Бабушка по отцу</span>
+        <bdi class="person-name" dir="auto">Миникаева Марзия Махмутовна</bdi>
+        <span class="person-years">р. 21.10.1954, Магнитогорск</span>
+        <span class="person-status">по сведениям семьи</span>
+      </a>
+      <a class="person-card" href="#relationship-grandmother">
+        <span class="person-role">Бабушка по матери</span>
+        <bdi class="person-name" dir="auto">Абзалутдинова Рамзия Ахнафовна</bdi>
+        <span class="person-years">р. 17.02.1953, Магнитогорск</span>
+        <span class="person-status">по сведениям семьи</span>
+      </a>
+    </div>
+    <div class="tree-connectors" aria-hidden="true"><span class="vbranch" style="left:calc(75% + var(--tree-gap)/4)"></span></div>
+    <div class="tree-row">
+      <a class="person-card" href="#relationship-father">
+        <span class="person-role">Отец</span>
+        <bdi class="person-name" dir="auto">Миникаев Альберт Фаритович</bdi>
+        <span class="person-years">р. 08.07.1980, Магнитогорск</span>
+        <span class="person-status">по сведениям семьи</span>
+      </a>
+      <a class="person-card" href="#relationship-mother">
+        <span class="person-role">Мать</span>
+        <bdi class="person-name" dir="auto">Миникаева Альфия Нурмухаметовна</bdi>
+        <span class="person-years">р. 28.02.1980, Магнитогорск</span>
+        <span class="person-status">по сведениям семьи</span>
+      </a>
+    </div>
+    <div class="tree-connectors" aria-hidden="true"><span class="mother-branch"></span></div>
+    <div class="tree-row child-row">
+      <div class="person-card subject">
+        <span class="person-role">Основной человек</span>
+        <bdi class="person-name" dir="auto">Миникаев Артур Альбертович</bdi>
+        <span class="person-years">р. 21.06.2002, Магнитогорск · программист</span>
+        <span class="person-status">Субъект исследования; сведения о себе сообщил сам</span>
+      </div>
+    </div>
+    <figcaption class="tree-caption" id="tree-description">Сверху — бабушки, ниже — родители, внизу — основной человек. Все линии — сообщённые родственниками связи, документов нет.<span>Деды Фарит и Нурмухамет, прадед Хузнахмет (1868) и прапрадед Миникай известны только по именам из отчеств и по семейному преданию; в схему они не вынесены — см. раздел «Родственные связи» и «Ссылка из Татарстана». Брак родителей не документирован.</span></figcaption>
+  </figure>
+</header>
+<nav class="report-nav" aria-label="Разделы отчёта"><a href="#findings">Главное</a><a href="#exile">Ссылка из Татарстана</a><a href="#family-connections">Родственные связи</a><a href="#chronology">Хронология</a><a href="#sources">Источники</a></nav>
+<main id="report-content">
+
+<div class="lead" id="findings">
+  <h2>Главное</h2>
+  <ul>
+    <li><b>В семье пять известных лиц.</b> Артур Альбертович (2002), его родители Альберт Фаритович (1980) и Альфия Нурмухаметовна (1980), бабушка по отцу Марзия Махмутовна (1954) и бабушка по матери Рамзия Ахнафовна (1953). Все — Магнитогорск. <span class="tag fam">по сведениям семьи</span></li>
+    <li><b>Семья пришла в Магнитогорск через ссылку из Татарстана.</b> Так рассказывают в семье: прадедов и прабабушек сослали. Исторический контекст это подтверждает как явление: в 1930–1933 годах в Магнитку шла массовая высылка раскулаченных татар из ТАССР. <span class="tag fam">по сведениям семьи</span></li>
+    <li><b>Найден возможный след — деревня Фомкино.</b> В индексах МВД Татарстана есть Миникаевы из села Фомкино Октябрьского района ТАССР, высланные 12 июля 1931 года в Челябинскую область. Фамилия и сценарий совпадают, но родство не доказано. <span class="tag maybe">вероятно</span></li>
+    <li><b>Прадед по отцу — Хузнахмет Миникаевич, 1868 год.</b> Из отчества следует, что его отца звали Миникай; отсюда, по всей видимости, и фамилия. Документа пока нет, а между 1868 и 1980 годами не хватает как минимум одного поколения. <span class="tag maybe">вероятно</span></li>
+    <li><b>Дед по отцу работал сварщиком в тресте «Магнитострой».</b> Это первая производственная привязка деда и готовый архивный маршрут: документы по личному составу треста хранятся в городском архиве Магнитогорска, фонд Р-142. <span class="tag fam">по сведениям семьи</span></li>
+    <li><b>Девичья фамилия матери по-прежнему не установлена.</b> Фамилия бабушки Абзалутдинова может быть брачной, поэтому версия «Альфия Абзалутдинова» остаётся догадкой. <span class="tag no">не установлено</span></li>
+  </ul>
+</div>
+
+<aside class="evidence-guide" aria-labelledby="evidence-guide-title">
+  <h3 id="evidence-guide-title">Как читать метки надёжности</h3>
+  <div class="legend">
+    <div><span class="tag ok">подтверждено</span> — независимые доказательные цепочки (в этом деле пока нет)</div>
+    <div><span class="tag ok">по документу</span> — один документ, single-source</div>
+    <div><span class="tag fam">по сведениям семьи</span> — рассказ родственника с записанным происхождением</div>
+    <div><span class="tag maybe">вероятно</span> — гипотеза, требующая проверки</div>
+    <div><span class="tag no">не установлено</span> — сведений пока недостаточно</div>
+    <div><span class="tag no">есть противоречия</span> — источники расходятся; конфликт описан в отчёте</div>
+  </div>
+</aside>
+
+<h2>Кто есть кто</h2>
+<p>Артур Альбертович Миникаев родился 21 июня 2002 года в Магнитогорске, по профессии программист. Отец, Альберт Фаритович Миникаев, родился 8 июля 1980 года в Магнитогорске и работает бригадиром. Мать, Альфия Нурмухаметовна Миникаева, родилась 28 февраля 1980 года там же, работает сметчиком. Бабушка по отцу, Марзия Махмутовна Миникаева, родилась 21 октября 1954 года в Магнитогорске, работала бухгалтером и в налоговой службе. Бабушка по матери, Рамзия Ахнафовна Абзалутдинова, родилась 17 февраля 1953 года в Магнитогорске и работала на Магнитогорском металлургическом комбинате. <span class="tag fam">по сведениям семьи</span></p>
+<p>Все четыре брака и поколения семьи связаны с Магнитогорском, но сама семья, по преданию, пришла сюда не добровольно: прадедов и прабабушек сослали из Татарстана. Фамилии — Миникаев, Абзалутдинов, Нурмухаметов, Махмутов — татарские по форме, что согласуется и с рассказом, и с составом населения города 1930-х годов.</p>
+
+<h3>Семья</h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Кем приходится</th><th scope="col">Имя</th><th scope="col">Годы</th><th scope="col">Откуда известно</th></tr></thead>
+  <tbody>
+    <tr><td>отец</td><td>Миникаев Альберт Фаритович</td><td>р. 08.07.1980</td><td>сообщение субъекта <span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td>мать</td><td>Миникаева Альфия Нурмухаметовна</td><td>р. 28.02.1980</td><td>сообщение субъекта <span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td>бабушка по отцу</td><td>Миникаева Марзия Махмутовна</td><td>р. 21.10.1954</td><td>сообщение субъекта <span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td>бабушка по матери</td><td>Абзалутдинова Рамзия Ахнафовна</td><td>р. 17.02.1953</td><td>сообщение субъекта <span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td>прадед по отцу</td><td>Миникаев Хузнахмет Миникаевич</td><td>1868 — ?</td><td>семейное предание <span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td>прапрадед по отцу</td><td>Миникай (фамилия неизвестна)</td><td>неизвестны</td><td>имя из отчества Хузнахмета <span class="tag maybe">вероятно</span></td></tr>
+    <tr><td>дед по отцу</td><td>Фарит Миникаев, сварщик треста «Магнитострой»</td><td>неизвестны</td><td>имя из отчества отца; занятие — по сведениям семьи <span class="tag maybe">вероятно</span></td></tr>
+    <tr><td>дед по матери</td><td>Нурмухамет (фамилия неизвестна)</td><td>неизвестны</td><td>имя из отчества матери <span class="tag maybe">вероятно</span></td></tr>
+    <tr><td>прадед по матери</td><td>Ахнаф (фамилия неизвестна)</td><td>неизвестны</td><td>имя из отчества бабушки <span class="tag maybe">вероятно</span></td></tr>
+  </tbody>
+</table></div>
+<p class="small">Даты — в том виде, как их сообщили, по григорианскому календарю. Варианты написания: Миникаев/Минекаев/Минникаев; Хузнахмет/Хузиахмет/Хузахамет; Марзия/Мәрзия; Рамзия/Рәмзия; Абзалутдинова/Абзалетдинова; Ахнаф/Әхнәф; Нурмухамет/Нурмөхәммәт.</p>
+
+<h2 id="exile">Ссылка из Татарстана и след деревни Фомкино</h2>
+<p><b>Что рассказывает семья.</b> Прадеды и прабабушки были сосланы в Магнитогорск из Татарстана. Других подробностей в семье нет: ни деревни, ни года, ни вида ссылки — только слово «сосланы». <span class="tag fam">по сведениям семьи</span></p>
+<p><b>Что говорит история города.</b> Это не единичная судьба. В 1930–1933 годах Магнитку строили в том числе спецпереселенцы: раскулаченных крестьян из Татарской АССР отправляли в Челябинскую область, и, по словам магнитогорского историка Салавата Ахметзянова, из Татарстана в Челябинскую область везли практически только в Магнитогорск. Первые партии пришли в 1930 году, массовая отправка — с середины мая по середину сентября 1931-го, на первые два года такие семьи составляли не менее четверти строителей. Жили в бараках, зимой 1931–1932 годов смертность была огромной. <a href="#source-5">[5]</a></p>
+<p><b>Что нашлось в индексах.</b> В базе «Открытый список» (сводка МВД Республики Татарстан) есть две записи, совпадающие с этим сценарием. Миникаев Хузиахмет, 1893 года рождения, житель села Фомкино Октябрьского района ТАССР, признан кулаком, решением Октябрьского райисполкома от 12 июля 1931 года выслан в Челябинскую область; реабилитирован 10 августа 1993 года. По тому же делу проходит Миникаев Салих Хузиахметович, 1926 года рождения, из того же села — выслан вместе с семьёй. Архивное дело хранится в информационном центре УВД Челябинской области, № 15358. <a href="#source-3">[3]</a> <a href="#source-4">[4]</a></p>
+<p><b>Почему это может быть наша семья — и почему это пока не доказано.</b> Совпадает фамилия, совпадает губерния и уезд происхождения, совпадает сама судьба: высланы в Челябинскую область в 1931 году. Не совпадает год рождения: у прадеда в семье называют 1868-й, а у Хузиахмета из Фомкино — 1893-й. Возможны три объяснения: это разные люди (например, отец и сын), год в семье запомнили неточно, либо запись индекса относится к другому Миникаеву. Пока это версия. <span class="tag maybe">вероятно</span></p>
+<p><b>Что за деревня.</b> Фомкино — татарское село в Нурлатском районе (до 1997 года — Октябрьский район), в 21 км к западу от Нурлата, у границы с Самарской областью. До 1920 года — Старо-Максимкинская волость Чистопольского уезда Казанской губернии, затем Чистопольский кантон ТАССР. В начале XX века в селе было две мечети и медресе с 1908 года; в 1897 году — 1607 жителей, в 1926-м — 1440. <a href="#source-6">[6]</a> Для поиска это важно: метрические книги села — мусульманские, по приходу села Фомкино, и хранятся в Казани.</p>
+<blockquote>Если дело № 15358 назовёт отчество Хузиахмета как «Миникаевич» и состав его семьи, версия о Фомкино превратится из догадки в установленный факт — или отпадёт.</blockquote>
+
+<h2 id="family-connections">Родственные связи</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Связь</th><th scope="col">Чем подтверждается</th><th scope="col">Надёжность</th></tr></thead>
+  <tbody>
+    <tr id="relationship-mother"><td>Альфия Нурмухаметовна → Артур (мать — сын)</td><td>Прямое указание субъекта. Документ не сверялся. <a href="#source-1">[1]</a></td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-father"><td>Альберт Фаритович → Артур (отец — сын)</td><td>Прямое указание субъекта. Документ не сверялся. <a href="#source-1">[1]</a></td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-grandmother"><td>Рамзия Ахнафовна → Альфия (мать — дочь)</td><td>«Мама мамы Абзалутдинова Рамзия Ахнафовна». <a href="#source-2">[2]</a></td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-grandmother-paternal"><td>Марзия Махмутовна → Альберт (мать — сын)</td><td>«Мама отца Миникаева Марзия Махмутовна». <a href="#source-1">[1]</a></td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr id="relationship-grandfather-paternal"><td>Фарит → Альберт (отец — сын)</td><td>Только отчество «Фаритович»: имя отца, но не доказательство отцовства.</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+    <tr id="relationship-grandfather-maternal"><td>Нурмухамет → Альфия (отец — дочь)</td><td>Только отчество «Нурмухаметовна»; фамилия деда неизвестна.</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+    <tr id="relationship-great-grandfather"><td>Ахнаф → Рамзия (отец — дочь)</td><td>Только отчество «Ахнафовна»; фамилия прадеда неизвестна.</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+    <tr id="relationship-great-great"><td>Хузнахмет (1868) → Фарит (прадед — правнук)</td><td>Семейное предание; между ними минимум одно неустановленное поколение.</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+    <tr id="relationship-minikay"><td>Миникай → Хузнахмет (отец — сын)</td><td>Только отчество «Миникаевич».</td><td class="t"><span class="tag maybe">вероятно</span></td></tr>
+  </tbody>
+</table></div>
+<p>Однофамильцев не сливали. Миникаев Салих (1913–1987), призванный из Магнитогорска и живший затем в городе, — отдельный человек: он родом из деревни Нижние Шуни Вятской губернии, и его отчество не совпадает с Салихом Хузиахметовичем из Фомкино. Миникаев Хази (1918–1992) из деревни Сосмак Вятскополянского района — тоже другая семья. Брак Альфии Нурмухаметовны и Альберта Фаритовича в отчёте не утверждается: общее родительство не доказывает регистрацию брака.</p>
+<p>Про деда Фарита известно немного больше, чем имя: по семейному сведению он работал сварщиком в тресте «Магнитострой» <a href="#source-9">[9]</a>. Само по себе это не доказывает, что он сын Хузнахмета, но даёт проверяемую зацепку: документы по личному составу треста лежат в городском архиве Магнитогорска, фонд Р-142 <a href="#source-10">[10]</a>, а музей «Магнитостроя» собирает фотографии и документы предприятия <a href="#source-11">[11]</a>.</p>
+
+<h2 id="chronology">Хронология</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Когда</th><th scope="col">Что и где</th><th scope="col">Надёжность</th></tr></thead>
+  <tbody>
+    <tr><td class="d">1868</td><td>родился Хузнахмет Миникаевич Миникаев — по семейному преданию</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">до 1920</td><td>деревня Фомкино — Старо-Максимкинская волость Чистопольского уезда Казанской губернии, затем ТАССР</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">12.07.1931</td><td>Октябрьский райисполком ТАССР высылает семью Миникаевых из Фомкино в Челябинскую область</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">1931–1933</td><td>массовая высылка раскулаченных татар ТАССР на строительство Магнитки</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+    <tr><td class="d">17.02.1953</td><td>родилась Рамзия Ахнафовна Абзалутдинова, Магнитогорск</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">21.10.1954</td><td>родилась Марзия Махмутовна Миникаева, Магнитогорск</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">28.02.1980</td><td>родилась Альфия Нурмухаметовна, Магнитогорск</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">08.07.1980</td><td>родился Альберт Фаритович Миникаев, Магнитогорск</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">21.06.2002</td><td>родился Артур Альбертович Миникаев, Магнитогорск</td><td class="t"><span class="tag fam">по сведениям семьи</span></td></tr>
+    <tr><td class="d">10.08.1993</td><td>реабилитация Хузиахмета и Салиха Миникаевых из Фомкино</td><td class="t"><span class="tag ok">по документу</span></td></tr>
+  </tbody>
+</table></div>
+
+<h2>Места</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Как в источнике</th><th scope="col">Принадлежность на дату события</th><th scope="col">Сейчас</th></tr></thead>
+  <tbody>
+    <tr><td>г. Магнитогорск</td><td>1953–1980 — Челябинская область, РСФСР, СССР; 2002 — Российская Федерация</td><td>г. Магнитогорск, Челябинская область, Россия</td></tr>
+    <tr><td>с. Фомкино, Октябрьский р-н, ТАССР</td><td>1931 — Октябрьский район Татарской АССР; до 1920 — Старо-Максимкинская волость Чистопольского уезда Казанской губернии</td><td>с. Фомкино, Нурлатский район, Республика Татарстан</td></tr>
+    <tr><td>челябинская область (место высылки)</td><td>1931 — Уральская область, РСФСР (Челябинская область образована в 1934 г.)</td><td>Челябинская область, Россия</td></tr>
+  </tbody>
+</table></div>
+
+<h2>Документы</h2>
+<p>Семейных документов пока не передано: ни свидетельств о рождении, ни справок о реабилитации, ни трудовых книжек, ни фотографий с подписями. Зато впервые появился документ, который можно запросить: архивное дело № 15358 в информационном центре УВД Челябинской области — по нему проходят Миникаевы, высланные из Фомкино в 1931 году. Именно в нём будет состав семьи, отчество главы и точное место поселения в Челябинской области.</p>
+
+<h2>Нестыковки и открытые вопросы</h2>
+<ul>
+  <li><b>Год рождения прадеда.</b> В семье называют 1868-й, в индексе у Хузиахмета из Фомкино — 1893-й. Разница в 25 лет: либо это отец и сын, либо год в семье запомнили неточно, либо совпадение случайно. Различит дело № 15358 и метрическая книга.</li>
+  <li><b>Пропущенное поколение.</b> Между Хузнахметом (1868) и Альбертом (1980) — 112 лет. Отца Фарита в семье не называют; без него линия не сходится и в древо он не добавлен.</li>
+  <li><b>Фамилия бабушки.</b> Абзалутдинова может быть брачной или девичьей; тогда дед по матери мог быть Абзалутдиновым. Различит запись о рождении Альфии 1980 года.</li>
+  <li><b>Место ссылки.</b> «В Магнитогорск» — семейная формулировка; в 1931 году людей могли размещать и в окрестных спецпосёлках. Точное место назовёт дело.</li>
+</ul>
+
+<h2>Где искали и не нашли</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Таблица отчёта; при необходимости прокручивается"><table>
+  <thead><tr><th scope="col">Где</th><th scope="col">Что искали</th><th scope="col">Почему это ещё не ответ</th></tr></thead>
+  <tbody>
+    <tr><td>«Открытый список» (индексы МВД РТ)</td><td>репрессированные Миникаевы</td><td>нашлись 43 записи, из них кластер Фомкино; связь с нашей семьёй не доказана</td></tr>
+    <tr><td>timenote.info</td><td>страница «Хузиахмет Миникаев»</td><td>сайт не открывается: соединение не устанавливается; запись видна только в поисковой выдаче</td></tr>
+    <tr><td>База наград ОГАЧО</td><td>награждённые с фамилией Миникаев</td><td>фильтр по фамилии не сработал: база отдала все 1,6 млн записей</td></tr>
+    <tr><td>Общая веб-выдача</td><td>Миникаевы Магнитогорска, значение имени Миникай</td><td>мемориальные публикации и коммерческие страницы; словарных статей по имени нет</td></tr>
+    <tr><td>Википедия</td><td>однофамильцы</td><td>найдены Миникаев Хази (Вятка) и Миникаев Салих (Нижние Шуни) — другие семьи</td></tr>
+  </tbody>
+</table></div>
+
+<h2>Что можно сделать дальше</h2>
+<h3>Запросить в архивах</h3>
+<ul>
+  <li><b>Информационный центр ГУ МВД России по Челябинской области:</b> архивное дело № 15358 (Миникаев Хузиахмет и Миникаев Салих Хузиахметович) — состав семьи, отчество главы, место поселения, дата реабилитации. Это первый по важности запрос.</li>
+  <li><b>МВД Республики Татарстан / Государственный архив РТ:</b> списки раскулаченных по Октябрьскому району ТАССР за 1931 год; сведения о семье Миникаевых из Фомкино.</li>
+  <li><b>Центральный государственный архив РТ (Казань):</b> метрические книги мечети села Фомкино — рождение Хузнахмета (1868) и Хузиахмета (1893), браки и смерти рода Миникаевых; материалы переписей 1897 и 1917 годов по Фомкино.</li>
+  <li><b>Отдел ЗАГС Магнитогорска:</b> записи о рождении Альберта и Альфии (1980), Марзии (1954), Рамзии (1953) — они дадут дедов полностью и девичьи фамилии бабушек.</li>
+  <li><b>МКУ «Городской архив г. Магнитогорска», фонд Р-142 (трест «Магнитострой», 1936–1992):</b> приказы по кадрам и расчётные ведомости — там должен быть сварщик Фарит Миникаев. Нужен хотя бы примерный период работы или год рождения, иначе поиск по ведомостям нереален.</li>
+  <li><b>Музей истории «Магнитостроя»</b> (Магнитогорск, ул. Советская, 145/3, mcmuzei@mail.ru): фотографии и документы предприятия, встречи с ветеранами треста — реальный шанс на снимок деда.</li>
+  <li><b>ОГАЧО и архив ММК:</b> личные карточки работников — Рамзии Ахнафовны (ММК), Марзии Махмутовны (бухгалтерия, налоговая служба).</li>
+</ul>
+<h3>В семье</h3>
+<ul>
+  <li>Спросить у бабушки Марзии Махмутовны: откуда именно привезли семью, кто из прадедов был выслан, не сохранились ли справка о реабилитации или старые фотографии.</li>
+  <li>Уточнить у отца, знает ли он отчество деда Фарита и год его рождения.</li>
+  <li>Спросить у мамы её девичью фамилию и полное имя деда Нурмухамета.</li>
+</ul>
+
+<h2 id="sources">Источники</h2>
+<ol class="src">
+  <li id="source-1"><b>Устные сообщения субъекта, 6 ноября 2026 г.</b> О себе, родителях, бабушке Марзии Махмутовне и происхождении рода. Записи в деле: <code>input/interview-2026-11-06.md</code>, <code>input/interview-2026-11-06-3.md</code> (A-0001, A-0007).</li>
+  <li id="source-2"><b>Сообщение субъекта о бабушке по матери, 6 ноября 2026 г.</b> Запись в деле: <code>input/interview-2026-11-06-2.md</code> (A-0006).</li>
+  <li id="source-3"><b>«Открытый список»: Миникаев Хузиахмет (1893).</b> Село Фомкино Октябрьского р-на ТАССР, кулак, высылка 12.07.1931 в Челябинскую обл., дело ИЦ УВД Челябинской обл. № 15358, реабилитация 10.08.1993; источник данных — МВД Республики Татарстан. <a href="https://ru.openlist.wiki/Миникаев_Хузиахмет_(1893)">ru.openlist.wiki</a> (A-0008).</li>
+  <li id="source-4"><b>«Открытый список»: Миникаев Салих Хузиахметович (1926).</b> То же село и то же дело; высылка 12.07.1931, реабилитация 10.08.1993. <a href="https://ru.openlist.wiki/Миникаев_Салих_Хузиахметович_(1926)">ru.openlist.wiki</a> (A-0009).</li>
+  <li id="source-5"><b>Рахматуллин Т. «Сталинская стройка на Магнитке…»</b> Интервью с историком Салаватом Ахметзяновым, «Реальное время», 27.03.2017; в основе — его книга «Раскулаченные — первостроители Магнитогорска». <a href="https://realnoevremya.ru/articles/59814-v-kakih-usloviyah-raskulachennye-tatary-stroili-magnitku/print">realnoevremya.ru</a> (A-0010).</li>
+  <li id="source-6"><b>Татарская энциклопедия: село Фомкино.</b> История, административная принадлежность, мечети и медресе, число жителей. <a href="https://tatarica.org/ru/razdely/municipalnye-obrazovaniya/municipalnye-rajony/nurlatskij-rajon-1/fomkino">tatarica.org</a> (A-0011).</li>
+  <li id="source-7"><b>«Бессмертный полк», страница «Миникаев Салих».</b> Другая семья: Нижние Шуни, Вятская губерния. <a href="https://www.moypolk.ru/soldier/minikaev-salih">moypolk.ru</a> (A-0002).</li>
+  <li id="source-8"><b>«Открытый список»: Абзалутдинов Минневали Абзалутдинович (1903).</b> Носитель фамилии бабушки по матери; родство не установлено. <a href="https://ru.openlist.wiki/Абзалутдинов_Минневали_Абзалутдинович_(1903)">ru.openlist.wiki</a> (A-0012).</li>
+  <li id="source-9"><b>Сообщение субъекта о работе деда, 6 ноября 2026 г.</b> «Отец отца Фарит трудился сварщиком в тресте „Магнитострой“». Запись в деле: <code>input/interview-2026-11-06-4.md</code> (A-0013).</li>
+  <li id="source-10"><b>Путеводитель «Неархив»: фонд Р-142, трест «Магнитострой».</b> МКУ «Городской архив г. Магнитогорска», 1936–1992; состав фонда, документы по личному составу. <a href="https://notarc.org/ru/302884">notarc.org</a> (A-0014).</li>
+  <li id="source-11"><b>Музей истории «Магнитостроя».</b> Страница «О музее», контакты. <a href="http://museum.magnitostroy.su/o-muzee/">museum.magnitostroy.su</a> (A-0015).</li>
+</ol>
+<p class="small">Если дело № 15358 назовёт отчество Хузиахмета «Миникаевич» и среди высланных окажется семья с сыновьями, версия о Фомкино сменится статусом «по документу», а пропущенное поколение можно будет восстановить по метрическим книгам села. О живых людях собраны только имя, дата и место рождения и занятие; адреса, телефоны и документы-идентификаторы не собирались и не публикуются.</p>
+
+</main>
+<footer class="report-footer"><span>Дело gen-tree · семья Миникаевых, Магнитогорск</span><a href="#top">К началу ↑</a></footer>
+</div>
+</body>
+</html>
