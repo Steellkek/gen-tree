@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="ru" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Спецпереселенцы</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="T2hYzu0ry1eEvCj-_iKAnV0cCSMKU9i3TF2oXowY0fwYXQuUuWSmE7HoY8uWe-n6PkxIaEsnqft8JOYO5nu-yA==">
+
+<link type="image/png" href="/favicon.ico" rel="icon">
+<link href="/assets/37457f70/css/bootstrap.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet">
+<link href="/public/settlers/css/settlers.css?v=3" rel="stylesheet"></head>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(30678568, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/30678568" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<body>
+    <div class="wrapper">
+        
+<section class="main-screen">
+    <header class="header" id="search">
+        <nav class="nav">
+            <a class="nav_link" href="/home/biographic"><img class="back" src="/public/settlers/img/back.png" alt="">вернуться к базам данных</a>
+        </nav>
+        <div class="sprite-container">
+            <div class="sprite-image"></div>
+        </div>
+        <h1 class="name"><a href="/settlers">СПЕЦПЕРЕСЕЛЕНЦЫ</a></h1>
+        <div class="description">
+            Граждане, ограниченные в правах и принудительно выселенные на Южный Урал.
+        </div>
+        
+<div class="search">
+
+
+
+<form id="dublicate-filter" action="/settlers" method="get" data-pjax="1">
+
+    <div class="input-container focused field-settlerssearch-surname">
+<input type="text" id="settlerssearch-surname" class="input" name="SettlersSearch[surname]" value="Миникаев" autocomplete="off">
+<label class="input-placeholder" for="settlerssearch-surname">Фамилия</label>
+</div>
+    <div class="input-container field-settlerssearch-name">
+<input type="text" id="settlerssearch-name" class="input" name="SettlersSearch[name]" autocomplete="off">
+<label class="input-placeholder" for="settlerssearch-name">Имя</label>
+</div>
+    <div class="input-container field-settlerssearch-year_of_birth">
+<input type="text" id="settlerssearch-year_of_birth" class="input" name="SettlersSearch[year_of_birth]" maxlength="4" autocomplete="off" onkeypress="return (event.charCode &gt;= 48 &amp;&amp; event.charCode &lt;= 57) || event.keyCode == 13">
+<label class="input-placeholder" for="settlerssearch-year_of_birth">Год рождения</label>
+</div>
+    <div class="input-container field-settlerssearch-place_of_settlement">
+<input type="text" id="settlerssearch-place_of_settlement" class="input" name="SettlersSearch[place_of_settlement]" autocomplete="off">
+<label class="input-placeholder" for="settlerssearch-place_of_settlement">Место поселения</label>
+</div>
+    <div class="button__block">
+        <button type="submit" class="button button-primary" style="width: 250px">Искать</button>        <div class="link_block"><a href="/settlers" class="link">Сбросить поиск</a></div>
+    </div>
+
+</form>
+<div class="text-center">
+    <button type="button" class="button button-primary" data-toggle="modal" data-target="#modalAbout">
+        о проекте
+    </button>
+</div>
+
+</div>
+    </header>
+
+    <div class="background">
+        <div class="slideshow">
+            <div class="slideshow__item" style="background-image: url(/public/settlers/img/background1.jpg)"></div>
+            <div class="slideshow__item active" style="background-image: url(/public/settlers/img/background2.jpg)"></div>
+            <div class="slideshow__item" style="background-image: url(/public/settlers/img/background3.jpg)"></div>
+            <div class="slideshow__item" style="background-image: url(/public/settlers/img/background4.jpg)"></div>
+        </div>
+    </div>
+    <main id="main" class="main Array">
+    <div>
+        
+        <select id="pageSizer" class="form-select d-inline-block w-auto" name="pageSizer">
+<option value="10" selected>Показывать: 10</option>
+<option value="50">Показывать: 50</option>
+<option value="100">Показывать: 100</option>
+</select>         
+    <div id="about" class="hidden" style="max-height: calc(100vh - 12rem); overflow-y: auto;"><h3 class="about">О проекте</h3>
+
+<p>Рубеж 1920&ndash;1930-х&nbsp; годов был переломным моментом в развитии Советского Союза: индустриализация и сплошная коллективизация сельского хозяйства навсегда изменили облик страны и определили всю ее последующую историю. Одной из оборотных сторон этих процессов стало усиление репрессивного давления со стороны государства. Основная масса крестьян бойкотировало вступление в колхозы, и в качестве меры принуждения был запущен процесс раскулачивания, то есть насильственного вытеснения из деревни семей зажиточных крестьян, их родственников и тех, кто, так или иначе, оказывал сопротивление коллективизации.</p>
+
+<div class="image-right">
+    <div>
+        <p>Кулаки, согласно постановлению Политбюро ЦК ВКП(б) &laquo;О мероприятиях по ликвидации кулацких хозяйств в районах сплошной коллективизации&raquo; 30&nbsp;января 1930&nbsp;года делились на три категории: первая категория заключалась в концлагеря, либо осуждалась (в случае оказания активного сопротивления) на смертную казнь; вторая категория высылалась в отдаленные местности СССР, либо в отдаленные районы края, в котором они проживали; третья категория расселялась в пределах района, в котором они жили. Лица, попавшие во вторую категорию, а так же члены семей кулаков первой категории, не попавшие в лагерь, направлялись на &laquo;спецпоселение&raquo;, где они находились под надзором органов НКВД. Позднее, в конце 1930-х&nbsp;годов, их число пополнилось лицами, высланными с прежних мест проживания по национальному признаку, во время и после завершения Великой Отечественной войны к ним отнесли коллаборантов и тех, кого подозревали в сотрудничестве с врагом.</p>
+    </div>
+    <div>
+        <img src="/public/settlers/img/about/1.jpg">
+    </div>
+</div>
+
+<p>Одной из проблем для генеалогов является тот факт, что документы на спецпереселенцев находятся на хранении архивных учреждений тех субъектов Российской Федерации, в которые направлялся раскулаченный. Зачастую люди, ищущие родственников, знают, где они были раскулачены, но не знают, куда именно они были при этом направлены. Осложняет поиск и то, что большая часть этих материалов остаются частью фондов ведомственных архивов.</p>
+
+<p>Электронная база данных <b>&laquo;Спецпереселенцы&raquo;</b> призвана помочь родственникам пострадавших в их поисках. База данных содержит сведения о лицах, направленных в 1930-е годы на спецпоселение в Челябинскую область. Основу ее составляют документы фонда Р-1075 &laquo;Управление исправительно-трудовых лагерей и колоний (УИТЛК) Управления НКВД СССР по Челябинской области&raquo;, как правило, представляющие собой списки (неполные) спецпоселенцев. Такая форма документов, отметим, содержит лишь самые необходимые, простейшие сведения о лицах. Личные дела спецпереселенцев на хранение Объединенного государственного архива Челябинской области не передавались. Задействованы списки спецпоселенцев и из других фондов. На момент ввода базы данных в пользование в ней содержалось 53&nbsp;661 запись, однако сотрудники архива продолжают работу по ее пополнению.</p>
+
+<div class="image-left">
+    <div>
+        <img src="/public/settlers/img/about/2.jpg">
+    </div>
+    <div>
+        <p>Информационные карточки на каждую из персон содержат такую информацию, как: фамилия, имя и отчество спецпереселенца; место его поселения; год рождения; место, откуда он был выселен; место работы и должность; состав семьи с указанием статуса членов семьи (жена, сын, отец, глава семьи и т.д.); поисковые данные документа, являющегося источником информации. База данных позволяет как установить сам факт нахождения искомого лица на территории Челябинской области, так и сообщить о нем дополнительные сведения, позволяющие, в том числе, сделать запрос в ведомственные архивы, в которых могут находиться на хранении материалы, содержащие более обстоятельную информацию о спецпоселенце.</p>
+        <p>База данных является <u>бесплатной и общедоступной</u>, для ее использования не требуется регистрации.</p>
+    </div>
+</div>
+<p>Работу по выявлению информации для базы данных, а также ее переводу в электронный вид выполняли специалисты отдела НСА государственного архива.</p>
+<h4>Рабочая группа проекта:</h4>
+<p>Координатор проекта - первый заместитель директора ОГАЧО Светлана Ардашова (ardashova@archive74.ru).</p>
+<p>Руководитель проекта – заведующий отделом НСА Елена Буданова (budanova@archive74.ru).</p>
+<p>Специалисты отдела НСА: 
+Марина Полухина,
+Татьяна Разиева,
+Дарья Семенова.
+</p>
+<p>Руководитель технической реализацией проекта – заведующий отделом информационных технологий и защиты информации Евгений Финадеев (eafinadeev@archive74.ru).</p>
+<p>Специалисты отдела ИТ и ЗИ: 
+Артур Шарипов,
+Татьяна Зименко,
+Евгений Соболев.
+</p>
+<p>При возникновении проблем при работе над ресурсом, технических вопросов, пожеланий по дальнейшему его развитию вы можете обратиться непосредственно к специалистам проекта.</p>
+<p>Информация новой базы данных добавлена в <a href="https://dbases.archive74.ru/" class="link">единую поисковую систему</a> биографической информации архива. Поэтому поиск интересующего лица исследователи смогут вести сразу по девяти электронным ресурсам, в которые внесено более 2,2 млн. записей о жителях Челябинской области.</p>
+<p>Надеемся, что новый ресурс будет полезен исследователям. Если же после поисков возникнет необходимость в заказе копий документов, вы можете это сделать через личный кабинет Пользователя, заполнив <a href="https://zapros.archive74.ru/" class="link">Заказ.</a></p>
+
+<style>
+    .image-right{
+        display: flex;
+        align-items: flex-start;
+    }
+    .image-right div:first-child{
+        flex: 1 1 100%;
+    }
+    .image-right div:last-child{
+        flex: 0 0 auto;
+        padding: 15px 0 15px 20px;
+    }
+    .image-left{
+        display: flex;
+        align-items: flex-start;
+    }
+    .image-left div:first-child{
+        flex: 0 0 auto;
+        padding: 15px 20px 15px 0;
+    }
+    .image-left div:last-child{
+        flex: 1 1 100%;
+    }
+    .link {
+        text-decoration: none;
+        color: #dad9d9;
+    }
+    @media screen and (max-width: 768px) {
+        .image-left, 
+        .image-right{
+            display: block;
+        }
+        .image-right div:last-child,
+        .image-right div:first-child{
+            padding: 15px 0;
+        }
+        .image-left img, 
+        .image-right img{
+            max-width: 100%;
+        }
+    }
+</style></div>
+        <div id="table" class="Array">
+            <div id="results" data-pjax-container="" data-pjax-push-state data-pjax-timeout="1000">                <div id="w0" class="grid-view"><div class="summary">Показаны записи <b>1-10</b> из <b>11</b>.</div><div class='main__table_container'><table class="table table-hover"><thead>
+<tr><th>#</th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=surname" data-sort="surname">Фамилия</a></th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=name" data-sort="name">Имя</a></th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=patronymic" data-sort="patronymic">Отчество</a></th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=year_of_birth" data-sort="year_of_birth">Год рождения</a></th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=number_of_years" data-sort="number_of_years">Возраст</a></th><th><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;sort=place_of_settlement" data-sort="place_of_settlement">Место поселения</a></th></tr>
+</thead>
+<tbody>
+<tr data-key="1255"><td>1</td><td>Миникаев (Минекаев)</td><td>Гаус</td><td></td><td></td><td></td><td>Магнитогорский район, пос. Ново-Туковый</td></tr>
+<tr data-key="1256"><td>2</td><td>Миникаева (Минекаева)</td><td>[Набира]</td><td></td><td></td><td></td><td>Магнитогорский район, пос. Ново-Туковый</td></tr>
+<tr data-key="5565"><td>3</td><td>Миникаев</td><td>Мингаз</td><td></td><td>1883</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5566"><td>4</td><td>Миникаев</td><td>Магсут</td><td></td><td>1916</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5567"><td>5</td><td>Миникаева</td><td>Халида</td><td></td><td>1897</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5568"><td>6</td><td>Миникаева</td><td>Фахры</td><td></td><td>1913</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5569"><td>7</td><td>Миникаева</td><td>Наиля</td><td></td><td>1919</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5570"><td>8</td><td>Миникаева</td><td>Лальминура</td><td></td><td>1921</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5571"><td>9</td><td>Миникаева</td><td>Саида</td><td></td><td>1924</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+<tr data-key="5572"><td>10</td><td>Миникаев</td><td>Акдес</td><td></td><td>1927</td><td></td><td>г. Магнитогорск, пос. Ново-Северный</td></tr>
+</tbody></table></div><ul class="pagination"><li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;page=1&amp;per-page=10" data-page="0">1</a></li>
+<li><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;page=2&amp;per-page=10" data-page="1">2</a></li>
+<li class="next"><a href="/settlers/settlers/index?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2&amp;page=2&amp;per-page=10" data-page="1">&raquo;</a></li></ul></div>            </div>        </div>
+        
+        <button id="remove" class="close">закрыть<span>✕</span></button>
+    </div>
+    </main>
+    <div class="mobile">
+        
+        <a href="/home/biographic" class="mobile__item">
+            <div>
+                <div class="mobile__item--icon">
+                    <img src="/public/settlers/img/back__gray.png">
+                </div>
+                <div class="mobile__item--text">Назад</div>
+            </div>
+        </a>
+        <a href="#search" class="mobile__item">
+            <div>
+                <div class="mobile__item--icon">
+                    <img src="/public/settlers/img/search__gray.png" style="margin-right: 1px;">
+                </div>
+                <div class="mobile__item--text">Искать</div>
+            </div>
+        </a>
+        <button type="button" class="mobile__item" data-toggle="modal" data-target="#modalAbout">
+            <div>
+                <div class="mobile__item--icon">
+                    <img src="/public/settlers/img/about__gray.png">
+                </div>
+                <div class="mobile__item--text">О проекте</div>
+            </div>
+        </button>
+    </div>
+</section>
+    </div>
+
+    <div id="modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAbout" class="modal fade">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="top: 25px; right: 30px; position: fixed; z-index: 111;">закрыть <span>✕</span></button>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    
+                    <h3 class="about">О проекте</h3>
+
+<p>Рубеж 1920&ndash;1930-х&nbsp; годов был переломным моментом в развитии Советского Союза: индустриализация и сплошная коллективизация сельского хозяйства навсегда изменили облик страны и определили всю ее последующую историю. Одной из оборотных сторон этих процессов стало усиление репрессивного давления со стороны государства. Основная масса крестьян бойкотировало вступление в колхозы, и в качестве меры принуждения был запущен процесс раскулачивания, то есть насильственного вытеснения из деревни семей зажиточных крестьян, их родственников и тех, кто, так или иначе, оказывал сопротивление коллективизации.</p>
+
+<div class="image-right">
+    <div>
+        <p>Кулаки, согласно постановлению Политбюро ЦК ВКП(б) &laquo;О мероприятиях по ликвидации кулацких хозяйств в районах сплошной коллективизации&raquo; 30&nbsp;января 1930&nbsp;года делились на три категории: первая категория заключалась в концлагеря, либо осуждалась (в случае оказания активного сопротивления) на смертную казнь; вторая категория высылалась в отдаленные местности СССР, либо в отдаленные районы края, в котором они проживали; третья категория расселялась в пределах района, в котором они жили. Лица, попавшие во вторую категорию, а так же члены семей кулаков первой категории, не попавшие в лагерь, направлялись на &laquo;спецпоселение&raquo;, где они находились под надзором органов НКВД. Позднее, в конце 1930-х&nbsp;годов, их число пополнилось лицами, высланными с прежних мест проживания по национальному признаку, во время и после завершения Великой Отечественной войны к ним отнесли коллаборантов и тех, кого подозревали в сотрудничестве с врагом.</p>
+    </div>
+    <div>
+        <img src="/public/settlers/img/about/1.jpg">
+    </div>
+</div>
+
+<p>Одной из проблем для генеалогов является тот факт, что документы на спецпереселенцев находятся на хранении архивных учреждений тех субъектов Российской Федерации, в которые направлялся раскулаченный. Зачастую люди, ищущие родственников, знают, где они были раскулачены, но не знают, куда именно они были при этом направлены. Осложняет поиск и то, что большая часть этих материалов остаются частью фондов ведомственных архивов.</p>
+
+<p>Электронная база данных <b>&laquo;Спецпереселенцы&raquo;</b> призвана помочь родственникам пострадавших в их поисках. База данных содержит сведения о лицах, направленных в 1930-е годы на спецпоселение в Челябинскую область. Основу ее составляют документы фонда Р-1075 &laquo;Управление исправительно-трудовых лагерей и колоний (УИТЛК) Управления НКВД СССР по Челябинской области&raquo;, как правило, представляющие собой списки (неполные) спецпоселенцев. Такая форма документов, отметим, содержит лишь самые необходимые, простейшие сведения о лицах. Личные дела спецпереселенцев на хранение Объединенного государственного архива Челябинской области не передавались. Задействованы списки спецпоселенцев и из других фондов. На момент ввода базы данных в пользование в ней содержалось 53&nbsp;661 запись, однако сотрудники архива продолжают работу по ее пополнению.</p>
+
+<div class="image-left">
+    <div>
+        <img src="/public/settlers/img/about/2.jpg">
+    </div>
+    <div>
+        <p>Информационные карточки на каждую из персон содержат такую информацию, как: фамилия, имя и отчество спецпереселенца; место его поселения; год рождения; место, откуда он был выселен; место работы и должность; состав семьи с указанием статуса членов семьи (жена, сын, отец, глава семьи и т.д.); поисковые данные документа, являющегося источником информации. База данных позволяет как установить сам факт нахождения искомого лица на территории Челябинской области, так и сообщить о нем дополнительные сведения, позволяющие, в том числе, сделать запрос в ведомственные архивы, в которых могут находиться на хранении материалы, содержащие более обстоятельную информацию о спецпоселенце.</p>
+        <p>База данных является <u>бесплатной и общедоступной</u>, для ее использования не требуется регистрации.</p>
+    </div>
+</div>
+<p>Работу по выявлению информации для базы данных, а также ее переводу в электронный вид выполняли специалисты отдела НСА государственного архива.</p>
+<h4>Рабочая группа проекта:</h4>
+<p>Координатор проекта - первый заместитель директора ОГАЧО Светлана Ардашова (ardashova@archive74.ru).</p>
+<p>Руководитель проекта – заведующий отделом НСА Елена Буданова (budanova@archive74.ru).</p>
+<p>Специалисты отдела НСА: 
+Марина Полухина,
+Татьяна Разиева,
+Дарья Семенова.
+</p>
+<p>Руководитель технической реализацией проекта – заведующий отделом информационных технологий и защиты информации Евгений Финадеев (eafinadeev@archive74.ru).</p>
+<p>Специалисты отдела ИТ и ЗИ: 
+Артур Шарипов,
+Татьяна Зименко,
+Евгений Соболев.
+</p>
+<p>При возникновении проблем при работе над ресурсом, технических вопросов, пожеланий по дальнейшему его развитию вы можете обратиться непосредственно к специалистам проекта.</p>
+<p>Информация новой базы данных добавлена в <a href="https://dbases.archive74.ru/" class="link">единую поисковую систему</a> биографической информации архива. Поэтому поиск интересующего лица исследователи смогут вести сразу по девяти электронным ресурсам, в которые внесено более 2,2 млн. записей о жителях Челябинской области.</p>
+<p>Надеемся, что новый ресурс будет полезен исследователям. Если же после поисков возникнет необходимость в заказе копий документов, вы можете это сделать через личный кабинет Пользователя, заполнив <a href="https://zapros.archive74.ru/" class="link">Заказ.</a></p>
+
+<style>
+    .image-right{
+        display: flex;
+        align-items: flex-start;
+    }
+    .image-right div:first-child{
+        flex: 1 1 100%;
+    }
+    .image-right div:last-child{
+        flex: 0 0 auto;
+        padding: 15px 0 15px 20px;
+    }
+    .image-left{
+        display: flex;
+        align-items: flex-start;
+    }
+    .image-left div:first-child{
+        flex: 0 0 auto;
+        padding: 15px 20px 15px 0;
+    }
+    .image-left div:last-child{
+        flex: 1 1 100%;
+    }
+    .link {
+        text-decoration: none;
+        color: #dad9d9;
+    }
+    @media screen and (max-width: 768px) {
+        .image-left, 
+        .image-right{
+            display: block;
+        }
+        .image-right div:last-child,
+        .image-right div:first-child{
+            padding: 15px 0;
+        }
+        .image-left img, 
+        .image-right img{
+            max-width: 100%;
+        }
+    }
+</style>                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+<div id="quiz">
+
+    <div class="quiz">
+
+        <div class="quiz__content" ref="quiz__content" v-show="opened">        
+
+            <div class="quiz__header">
+                <div><b>Пройдите опрос!</b></div>
+                <div @click="opened = false" class="quiz__close">✕</div>
+            </div>
+
+            
+                <div style="margin-bottom: 1rem">
+                    <div class="quiz__question">{{ results.vopros1 }}</div>
+                    <div style="display: flex; justify-content: right;">
+                        <div style="user-select: none;">
+                            <label class="quiz__label"><input type="radio" value="1" v-model="results.lightness"> Да</label>
+                            <label class="quiz__label"><input type="radio" value="0" v-model="results.lightness"> Нет</label>
+                        </div>
+                    </div>
+                </div>
+
+                <transition name="fade">
+                    <div v-show="results.lightness !== null">
+                        <div class="quiz__question">{{ results.lightness == 1 ? results.vopros2_1 : results.vopros2_2 }}</div>
+                        <div style="padding-left: 1rem">
+                            <textarea class="quiz__textarea" v-model="results.comment" rows="3"></textarea>
+                        </div>
+
+                        <div style="margin-top: 1rem" class="quiz__question">Укажите email-адрес для обратной связи</div>
+                        <div style="padding-left: 1rem">
+                            <input type="text" class="quiz__textarea" v-model="results.email">
+                        </div>
+                        <div style="text-align: right;">
+                            <button class="quiz__send" type="button" @click="sendQuiz" :disabled="results.comment.trim() == '' || !isValidEmail">
+                                <span>Отправить</span>
+                                <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5004 11.9998H5.00043M4.91577 12.2913L2.58085 19.266C2.39742 19.8139 2.3057 20.0879 2.37152 20.2566C2.42868 20.4031 2.55144 20.5142 2.70292 20.5565C2.87736 20.6052 3.14083 20.4866 3.66776 20.2495L20.3792 12.7293C20.8936 12.4979 21.1507 12.3822 21.2302 12.2214C21.2993 12.0817 21.2993 11.9179 21.2302 11.7782C21.1507 11.6174 20.8936 11.5017 20.3792 11.2703L3.66193 3.74751C3.13659 3.51111 2.87392 3.39291 2.69966 3.4414C2.54832 3.48351 2.42556 3.59429 2.36821 3.74054C2.30216 3.90893 2.3929 4.18231 2.57437 4.72906L4.91642 11.7853C4.94759 11.8792 4.96317 11.9262 4.96933 11.9742C4.97479 12.0168 4.97473 12.0599 4.96916 12.1025C4.96289 12.1506 4.94718 12.1975 4.91577 12.2913Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </button>
+                        </div>
+                    </div>
+                </transition>
+
+                        
+        </div>
+        <div class="quiz__control" @click="opened = !opened">
+            <div class="quiz__button">
+                <svg width="20" height="20" viewBox="0 0 20 20"><path d="M6,18.71 L6,14 L1,14 L1,1 L19,1 L19,14 L10.71,14 L6,18.71 L6,18.71 Z M2,13 L7,13 L7,16.29 L10.29,13 L18,13 L18,2 L2,2 L2,13 L2,13 Z"></path></svg>
+            </div>
+            <div class="quiz__hint" v-show="!opened"><b>Помогите нам стать лучше!</b><br>Пройдите опрос!</div>            
+        </div>        
+    </div>
+</div>
+
+<script>
+
+    var app = new Vue({
+        el: '#quiz',
+        data: {
+            opened: false,
+            results: {
+                basetitle: 'БД Спецпереселенцы',
+                vopros1: 'Удобно ли Вам было пользоваться данным ресурсом?',
+                vopros2_1: 'Что именно вам понравилось?',
+                vopros2_2: 'Что именно вам не понравилось? Опишите проблему, а мы попытаемся её решить!',
+                lightness: null,
+                comment: '',
+                email: '',
+                dbname: 'settlers',
+            }
+        },
+        computed: {
+            isValidEmail: function(){
+                return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.results.email)
+            },
+        },
+        methods:{
+            sendQuiz: function(){
+                
+                if(this.results.comment.trim() == '' || !this.isValidEmail) return
+
+                let request = new XMLHttpRequest();
+                request.open('POST', '/site/send-quiz');
+                request.setRequestHeader('Content-Type', 'application/json');
+                request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                request.addEventListener("readystatechange", () => {
+
+                    if (request.readyState === 4 && request.status === 200) {
+
+                        if (request.responseText) {
+
+                            document.cookie = "qsettlers=1;max-age=31556926";
+
+                            this.$refs.quiz__content.textContent = request.responseText;
+
+                        }
+                    }
+                });
+
+                request.send(JSON.stringify(this.results));
+            }
+        }
+    })
+</script>
+
+<style>
+    .quiz{
+        position: fixed;
+
+        
+        
+        
+            left: 2rem;
+            bottom: 2rem;
+
+            @media screen and (max-width: 620px) {
+                display: none;
+            }
+            
+        
+                
+
+                
+
+        z-index: 200;
+        width: 330px;
+        max-width: 330px;
+        color: #333;
+        font-size: 15px;
+    }
+
+    .quiz__content{
+
+        background-color: #fff;
+        padding: 1rem 1.3rem;
+        margin-bottom: 0.3rem;
+        border-radius: 10px;
+        border: 1px solid #9b9b9b;
+    }
+
+    .quiz__control{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 60px;
+    }
+    .quiz__send.disabled, .quiz__send:disabled {
+        opacity: .65;
+        cursor: default;
+    }
+
+    .quiz__button{
+        background-color: #b9080e;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .quiz__button svg{
+        fill: #fff;
+    }
+
+    .quiz__question{
+        margin-bottom: 8px;
+        line-height: 1.3em;
+        border: 1px solid #d3d3d3;
+        border-radius: 0 8px 8px;
+        padding: 5px 10px;
+        margin-right: 1rem;
+    }
+
+    .quiz__label{
+        background: #f9f9f9;
+        padding: 1px 4px;
+        border: 1px solid #d3d3d3;
+        border-radius: 8px 8px 0 8px;
+        display: inline-block;
+        min-width: 60px;
+        cursor: pointer;
+    }
+
+    .quiz__label input{
+        cursor: pointer;
+    }
+
+    .quiz__textarea{
+        width: 100%;
+        border-radius: 8px 8px 0 8px;
+        border: 1px solid #d3d3d3;
+        background-color: #f9f9f9;
+        resize: none;
+        outline: unset;
+        padding: 10px;
+    }
+
+    .quiz__send{
+        color: #fff;
+        background-color: #b9080e;
+        border-color: #b9080e;
+        box-shadow: unset;
+        outline: unset;
+        border: unset;
+        border-radius: 4px;
+        padding: 3px 10px;
+        font-weight: 500;
+        margin-top: 1rem;
+        font-size: 13px;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+    }
+    .quiz__send span{
+        margin-right: 4px;
+    }
+
+    .quiz__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+
+    .quiz__close{
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .quiz__hint{
+        font-weight: 500;
+        font-size: 15px;
+        display: inline-block;
+        margin-left: 18px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 6px;
+        line-height: 1.2em;
+        border: 1px solid #9b9b9b;
+
+        
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+        opacity: 0;
+    }
+
+    /* эффект */
+    .quiz__button::after,
+    .quiz__button::before {
+        content: '';
+        position: absolute;
+        border: 2px solid #b90a10;
+        left: -10px;
+        opacity: 0;
+        right: -10px;
+        top: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        animation: pulse 2.5s linear infinite;
+    }
+
+    .quiz__button::after {
+        animation-delay: 1.25s;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.9;
+        }
+        100% {
+            transform: scale(1.2);
+            opacity: 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .quiz {
+            display: block;
+            width: unset;
+            font-size: 14px;
+                            left: 12px;
+                bottom: 12px;
+                width: unset;
+                    }
+        .quiz__button{
+            width: 38px;
+            height: 38px;
+        }
+        .quiz__hint {
+            display: none;
+        }
+        .quiz__control{
+            height: unset;
+                    }
+        .quiz__button::after, .quiz__button::before{
+            display: none;
+        }
+        .quiz__textarea{
+            padding: 7px;
+        }
+    }
+
+</style>
+<script src="/assets/42d748db/jquery.js"></script>
+<script src="/assets/e01c778/yii.js"></script>
+<script src="/assets/e01c778/yii.activeForm.js"></script>
+<script src="/assets/e01c778/yii.gridView.js"></script>
+<script src="/assets/c6ab5909/jquery.pjax.js"></script>
+<script src="/assets/37457f70/js/bootstrap.bundle.js"></script>
+<script src="/public/settlers/js/settlers.js"></script>
+<script>jQuery(function ($) {
+jQuery('#dublicate-filter').yiiActiveForm([], []);
+jQuery('#w0').yiiGridView({"filterUrl":"\/settlers?SettlersSearch%5Bsurname%5D=%D0%9C%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0%D0%B5%D0%B2","filterSelector":"#w0-filters input, #w0-filters select, #dublicate-filter","filterOnFocusOut":false});
+jQuery(document).pjax("#results a", {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#results"});
+jQuery(document).off("submit", "#results form[data-pjax]").on("submit", "#results form[data-pjax]", function (event) {jQuery.pjax.submit(event, {"push":true,"replace":false,"timeout":1000,"scrollTo":false,"container":"#results"});});
+});</script></body>
+</html>
