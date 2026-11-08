@@ -723,10 +723,10 @@ add('<p>Живые лица в деле: Миникаев А. А., Миника�
     'Конфессия не утверждается: мечеть Фомкино — вероятное место записей, а не установленный факт.</p>')
 add('<p class="small">Реестры дела: <code>person-register.csv</code>, <code>claims-register.csv</code>, <code>relationship-register.csv</code>, '
     '<code>artifact-register.csv</code>, <code>search-log.csv</code>, <code>research-state.md</code>. Древо для обмена: <code>gen-tree.ged</code> '
-    '(GEDCOM 5.5.1, 21 персона, 14 семей).</p>')
+    '(GEDCOM 5.5.1, 30 персон, 16 семей).</p>')
 
 add('</main>')
-add('<div class="report-footer"><span>Дело A:\\gen-tree · обновлено 7 ноября 2026</span><span>Источники и оценки — в реестрах дела</span></div>')
+add('<div class="report-footer"><span>Дело A:\\gen-tree · обновлено 8 ноября 2026</span><span>Источники и оценки — в реестрах дела</span></div>')
 add('</div>')
 add('</body>')
 add('</html>')
